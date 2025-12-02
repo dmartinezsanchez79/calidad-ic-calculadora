@@ -12,7 +12,7 @@ public class Calculadora {
      * @param b segundo sumando
      * @return resultado de a + b
      */
-    public int sumar(int a, int b) {
+    public int sumar(final int a, final int b) {
         return a + b;
     }
 
@@ -23,7 +23,7 @@ public class Calculadora {
      * @param b sustraendo
      * @return resultado de a - b
      */
-    public int restar(int a, int b) {
+    public int restar(final int a, final int b) {
         return a - b;
     }
 }
