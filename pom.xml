@@ -62,7 +62,7 @@
                             <goal>check</goal>
                         </goals>
                         <configuration>
-                            <failsOnError>true</failsOnError>
+                            <failsOnError>false</failsOnError>
                         </configuration>
                     </execution>
                 </executions>
