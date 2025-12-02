@@ -1,0 +1,31 @@
+name: CI - Maven Java
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Compilar, ejecutar tests y análisis estático
+        run: mvn -B clean verify
+
+      - name: Publicar artefacto JAR
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: calculadora-jar
+          path: target/*.jar
